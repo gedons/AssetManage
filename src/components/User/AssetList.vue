@@ -9,7 +9,7 @@
                 <div>
                   <h4 class="font-semibold">{{ asset.model }}</h4>
                   <p class="text-sm text-gray-500">{{ asset.serialNumber }}</p>
-                  <p class="text-sm text-gray-500">{{ asset.inStock ? 'Yes' : 'No' }}</p>
+                  <p class="text-sm text-gray-500">In Stock: {{ asset.inStock ? 'Yes' : 'No' }}</p>
                   <p class="text-sm text-gray-500">Quanity: x {{ asset.quantity }}</p>
                 </div>
             </div>

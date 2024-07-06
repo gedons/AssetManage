@@ -81,7 +81,7 @@
     methods: {
       async fetchRequests() {
         try {
-          const response = await axios.get('http://localhost:5000/api/requests', {
+          const response = await axios.get('https://api-assetmange.onrender.com/api/requests', {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
           });
           this.requests = response.data;
@@ -93,7 +93,7 @@
         try {
           this.isLoading = true;
           await axios.put(
-            `http://localhost:5000/api/requests/${requestId}`,
+            `https://api-assetmange.onrender.com/api/requests/${requestId}`,
             { status },
             { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
           );
@@ -108,7 +108,7 @@
       async deleteRequest(requestId) {
         try {
           this.isLoading = true;
-          await axios.delete(`http://localhost:5000/api/requests/${requestId}`, {
+          await axios.delete(`https://api-assetmange.onrender.com/api/requests/${requestId}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
           });
           this.requests = this.requests.filter(request => request._id !== requestId);

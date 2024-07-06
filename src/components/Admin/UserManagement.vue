@@ -119,7 +119,7 @@
       async fetchUsers() {
         this.isLoading = true;
         try {
-          const response = await axios.get('http://localhost:5000/api/users', {
+          const response = await axios.get('https://api-assetmange.onrender.com/api/users', {
             headers: { Authorization: `Bearer ${store.state.token}` }
           });
           this.users = response.data;
@@ -137,14 +137,14 @@
           
           if (this.editMode) {
             this.isLoading = true;
-            await axios.put(`http://localhost:5000/api/users/${this.editingUserId}`, this.newUser, {
+            await axios.put(`https://api-assetmange.onrender.com/api/users/${this.editingUserId}`, this.newUser, {
               headers: { Authorization: `Bearer ${store.state.token}` }
             });
             this.editMode = false;
             this.editingUserId = null;
             this.$toast.success('Users Updated Successfully',{timeout :5000});
           } else {
-            const response = await axios.post('http://localhost:5000/api/users', this.newUser, {
+            const response = await axios.post('https://api-assetmange.onrender.com/api/users', this.newUser, {
               headers: { Authorization: `Bearer ${store.state.token}` }
             });
             this.users.push(response.data);
@@ -160,7 +160,7 @@
       },
       async deleteUser(userId) {
         try {
-          await axios.delete(`http://localhost:5000/api/users/${userId}`, {
+          await axios.delete(`https://api-assetmange.onrender.com/api/users/${userId}`, {
             headers: { Authorization: `Bearer ${store.state.token}` }
           });
           this.users = this.users.filter(user => user._id !== userId);

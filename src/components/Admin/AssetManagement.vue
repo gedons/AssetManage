@@ -11,7 +11,7 @@
                 <th class="py-2 px-4 text-left font-medium">Model</th>
                 <th class="py-2 px-4 text-left font-medium">Location</th>
                 <th class="py-2 px-4 text-left font-medium">Date</th>
-                <th class="py-2 px-4 text-left font-medium">Quantity</th>
+                <th class="py-2 px-4 text-left font-medium">Qty</th>
                 <th class="py-2 px-4 text-left font-medium">In Stock</th>
                 <th class="py-2 px-4 text-left font-medium">Actions</th>
               </tr>
@@ -36,7 +36,7 @@
                 <td class="py-2 px-4 font-semibold">{{ asset.inStock ? 'Yes' : 'No' }}</td>
                 <td class="py-2 px-4 font-semibold">
                   <button class="text-black font-semibold underline" @click="setEditAsset(asset)">Edit</button>
-                  <button class="text-red-600 font-semibold underline md:ml-2" @click="deleteAsset(asset._id)">Delete</button>
+                  <button class="text-red-600 font-semibold underline md:ml-1" @click="deleteAsset(asset._id)">Delete</button>
                 </td>
               </tr>
             </tbody>
@@ -170,7 +170,7 @@
       async fetchAssets() {
         this.isLoading = true;
         try {
-          const response = await axios.get('http://localhost:5000/api/assets', {
+          const response = await axios.get('https://api-assetmange.onrender.com/api/assets', {
             headers: { Authorization: `Bearer ${store.state.token}` }
           });
           this.assets = response.data;
@@ -191,7 +191,7 @@
             formData.append(key, this.newAsset[key]);
           }
           if (this.editMode) {
-            await axios.put(`http://localhost:5000/api/assets/${this.editingAssetId}`, formData, {
+            await axios.put(`https://api-assetmange.onrender.com/api/assets/${this.editingAssetId}`, formData, {
               headers: { Authorization: `Bearer ${store.state.token}` }
             });
             this.editMode = false;
@@ -199,7 +199,7 @@
             this.$toast.success('Asset Updated Successfully',{timeout :5000});
           } else {
             this.isLoading = true;
-            const response = await axios.post('http://localhost:5000/api/assets', formData, {
+            const response = await axios.post('https://api-assetmange.onrender.com/api/assets', formData, {
               headers: { Authorization: `Bearer ${store.state.token}` }
             });
             this.$toast.success('Asset Added Successfully',{timeout :5000});
@@ -224,7 +224,7 @@
       },
       async deleteAsset(assetId) {
         try {
-          await axios.delete(`http://localhost:5000/api/assets/${assetId}`, {
+          await axios.delete(`https://api-assetmange.onrender.com/api/assets/${assetId}`, {
             headers: { Authorization: `Bearer ${store.state.token}` }
           });
           this.assets = this.assets.filter(asset => asset._id !== assetId);

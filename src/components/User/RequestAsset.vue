@@ -29,7 +29,7 @@
     methods: {
       async fetchAssets() {
         try {
-          const response = await axios.get('http://localhost:5000/api/assets');
+          const response = await axios.get('https://api-assetmange.onrender.com/api/assets');
           this.assets = response.data;
         } catch (error) {
           console.error('Failed to fetch assets:', error);
@@ -38,7 +38,7 @@
       async requestAsset() {
         try {
           await axios.post(
-            'http://localhost:5000/api/requests',
+            'https://api-assetmange.onrender.com/api/requests',
             { assetId: this.selectedAsset },
             { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
           );

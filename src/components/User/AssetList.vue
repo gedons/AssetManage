@@ -42,7 +42,7 @@
     methods: {
       async fetchAssets() {
         try {
-         const response = await axios.get('http://localhost:5000/api/assets', {
+         const response = await axios.get('https://api-assetmange.onrender.com/api/assets', {
             headers: { Authorization: `Bearer ${store.state.token}` }
           });
           this.assets = response.data;
@@ -53,7 +53,7 @@
       async requestAsset(assetId) {
         try {
           await axios.post(
-            'http://localhost:5000/api/requests',
+            'https://api-assetmange.onrender.com/api/requests',
             { assetId },
             { headers: { Authorization: `Bearer ${localStorage.getItem('token')}` } }
           );

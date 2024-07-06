@@ -23,7 +23,7 @@ const store = createStore({
   actions: {
     async login({ commit }, credentials) {
       try {
-        const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
+        const response = await axios.post('https://api-assetmange.onrender.com/api/auth/login', credentials);
         commit('setToken', response.data.token);  
         commit('setUser', response.data.user);
       } catch (error) {
@@ -32,7 +32,7 @@ const store = createStore({
     },
     async register({ commit }, userData) {
       try {
-        const response = await axios.post('http://localhost:5000/api/auth/register', userData);
+        const response = await axios.post('https://api-assetmange.onrender.com/api/auth/register', userData);
         commit('setToken', response.data.token);  
         commit('setUser', response.data.user);
       } catch (error) {

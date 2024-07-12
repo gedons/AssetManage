@@ -2,18 +2,18 @@
 	<section class="dark:bg-gray-100 dark:text-gray-800">
 		<div class="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row ">
 			<div class="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
-				<img src="../assets/Business_SVG.svg" alt="" class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
+				<img src="../assets/set.jpg" alt="" class="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
 			</div>
 			<div class="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
-				<h1 class="text-5xl font-bold leading-none sm:text-6xl">Efficient
-					<span class="dark:text-violet-600">Asset </span>Management
+				<h1 class="text-5xl font-bold leading-none sm:text-6xl">CPU 
+					<span>Instruction Set  </span>Simulator
 				</h1>
-				<p class="mt-6 mb-8 text-lg sm:mb-12">Efficiently manage your computer hardware inventory  
-					<br class="hidden md:inline lg:hidden">with our streamlined Asset Management System, designed to simplify tracking and organization
+				<p class="mt-6 mb-8 text-lg sm:mb-12">The CPU Instruction Set Simulator Application is a web-based tool designed to help users understand and visualize the process of converting assembly code
+					<br class="hidden md:inline lg:hidden"> into machine code and simulating its execution on a virtual CPU. The application consists of two main components: an assembler and a simulator.           
 				</p>
 				<div class="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-					<router-link to="/register" rel="noopener noreferrer" class="px-8 py-3 text-lg font-semibold rounded bg-gray-900 text-gray-50">Get Started</router-link>
-					<a rel="noopener noreferrer" href="#" class="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-800">Read More</a>
+					<router-link to="/assembler" rel="noopener noreferrer"  class="px-8 py-3 text-lg font-semibold border rounded dark:border-gray-800">Get Started</router-link>
+					
 				</div>
 			</div>
 		</div>
@@ -32,26 +32,15 @@
               </a>
               <div class="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                 <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
-                  <span class="relative inline-block">
-                    <svg viewBox="0 0 52 24" fill="currentColor" class="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block">
-                      <defs>
-                        <pattern id="e77df901-b9d7-4b9b-822e-16b2d410795b" x="0" y="0" width=".135" height=".30">
-                          <circle cx="1" cy="1" r=".7"></circle>
-                        </pattern>
-                      </defs>
-                      <rect fill="url(#e77df901-b9d7-4b9b-822e-16b2d410795b)" width="52" height="24"></rect>
-                    </svg>
-                    Welocome
-                  </span>
-                  
+                 More Info
                 </h2>
                 <p class="text-base text-gray-700 md:text-lg">
-                  We believe in simplifying the complexities of asset management. Our intuitive platform is designed to help businesses of all sizes keep track of their computer hardware inventory with ease. 
+                  The assembler translates human-readable assembly language into machine code, while the simulator executes the machine code and displays the state of the CPU registers and memory.
                 </p>
               </div>
               <div>
                 <router-link
-                  to="/register"
+                  to="/assembler"
                   class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-900 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
                 >
                   Get started
